@@ -339,6 +339,29 @@ then
   LIBUSB_W32_PATCH="libusb-win32-${LIBUSB_W32_VERSION}-mingw-w64.patch"
 
   # ---------------------------------------------------------------------------
+elif [[ "${RELEASE_VERSION}" =~ 0\.10\.0-14 ]]
+then
+
+  # ---------------------------------------------------------------------------
+  
+  OPENOCD_VERSION="0.10.0-14"
+
+  OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"omniface"}
+  OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"90b55982d715b92b9a211a2efcf70bd7cebe7ecd"}
+  
+  # ---------------------------------------------------------------------------
+
+  LIBUSB1_VERSION="1.0.22"
+  LIBUSB0_VERSION="0.1.5"
+  LIBUSB_W32_VERSION="1.2.6.0"
+  LIBFTDI_VERSION="1.4"
+  LIBICONV_VERSION="1.15"
+  HIDAPI_VERSION="0.8.0-rc1"
+
+  # LIBFTDI_PATCH="libftdi1-${LIBFTDI_VERSION}-cmake-FindUSB1.patch"
+  LIBUSB_W32_PATCH="libusb-win32-${LIBUSB_W32_VERSION}-mingw-w64.patch"
+
+  # ---------------------------------------------------------------------------
 else
   echo "Unsupported version ${RELEASE_VERSION}."
   exit 1
