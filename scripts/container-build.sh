@@ -4,7 +4,7 @@
 #   (https://gnu-mcu-eclipse.github.io)
 # Copyright (c) 2019 Liviu Ionescu.
 #
-# Permission to use, copy, modify, and/or distribute this software 
+# Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 # -----------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ script_folder_name="$(basename "${script_folder_path}")"
 
 # =============================================================================
 
-# Inner script to run inside Docker containers to build the 
+# Inner script to run inside Docker containers to build the
 # GNU MCU Eclipse RISC-V Embedded GCC distribution packages.
 
 # For native builds, it runs on the host (macOS build cases,
@@ -164,7 +164,7 @@ prepare_xbb_extras
 # -----------------------------------------------------------------------------
 
 # The \x2C is a comma in hex; without this trick the regular expression
-# that processes this string in the Makefile, silently fails and the 
+# that processes this string in the Makefile, silently fails and the
 # bfdver.h file remains empty.
 BRANDING="${BRANDING}\x2C ${TARGET_BITS}-bit"
 
@@ -182,10 +182,10 @@ then
   # ---------------------------------------------------------------------------
 
   OPENOCD_VERSION="0.10.0-7"
- 
+
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"20463c28affea880d167b000192785a48f8974ca"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.20"
@@ -205,10 +205,10 @@ then
   # ---------------------------------------------------------------------------
 
   OPENOCD_VERSION="0.10.0-8"
- 
+
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"af359c18327b9852219ddab74c7fe175853f10ae"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.20"
@@ -228,10 +228,10 @@ then
   # ---------------------------------------------------------------------------
 
   OPENOCD_VERSION="0.10.0-9"
- 
+
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"d653938f45a5f040f771852f02128c4bcf8959ff"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.20"
@@ -255,7 +255,7 @@ then
 
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"aa6c7e9b884b028468b667ba3fab4f609c70471d"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.20"
@@ -279,7 +279,7 @@ then
 
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"dd1d90111a5a91e56c7fd5621d3efff63bbb6015"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.20"
@@ -297,12 +297,12 @@ elif [[ "${RELEASE_VERSION}" =~ 0\.10\.0-12 ]]
 then
 
   # ---------------------------------------------------------------------------
-  
+
   OPENOCD_VERSION="0.10.0-12"
 
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"23ad80df43ac31ce147359f18f2ef9e0e62df794"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.22"
@@ -320,12 +320,12 @@ elif [[ "${RELEASE_VERSION}" =~ 0\.10\.0-13 ]]
 then
 
   # ---------------------------------------------------------------------------
-  
+
   OPENOCD_VERSION="0.10.0-13"
 
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"gnu-mcu-eclipse-dev"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"fc5bf80f84afe146cf798d06829ede4baafb2841"}
-  
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.22"
@@ -343,12 +343,35 @@ elif [[ "${RELEASE_VERSION}" =~ 0\.10\.0-14 ]]
 then
 
   # ---------------------------------------------------------------------------
-  
+
   OPENOCD_VERSION="0.10.0-14"
 
   OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"omniface"}
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"90b55982d715b92b9a211a2efcf70bd7cebe7ecd"}
-  
+
+  # ---------------------------------------------------------------------------
+
+  LIBUSB1_VERSION="1.0.22"
+  LIBUSB0_VERSION="0.1.5"
+  LIBUSB_W32_VERSION="1.2.6.0"
+  LIBFTDI_VERSION="1.4"
+  LIBICONV_VERSION="1.15"
+  HIDAPI_VERSION="0.8.0-rc1"
+
+  # LIBFTDI_PATCH="libftdi1-${LIBFTDI_VERSION}-cmake-FindUSB1.patch"
+  LIBUSB_W32_PATCH="libusb-win32-${LIBUSB_W32_VERSION}-mingw-w64.patch"
+
+  # ---------------------------------------------------------------------------
+elif [[ "${RELEASE_VERSION}" =~ 0\.10\.0-15 ]]
+then
+
+  # ---------------------------------------------------------------------------
+
+  OPENOCD_VERSION="0.10.0-15"
+
+  OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"omniface"}
+  OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"532140133fc0a6e52e30cc356b677d4183e322cd"}
+
   # ---------------------------------------------------------------------------
 
   LIBUSB1_VERSION="1.0.22"
